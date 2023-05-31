@@ -13,9 +13,9 @@ export default function Form({setValue,value,products,setFilter}:any) {
     setFilter(result);
   };
   return (
-    <div>
+    <div style={{margin:'20px'}}>
       <form onSubmit={OnsubmitHandler}>
-        <input type="text" onChange={onChangeHandler}  value={value}/>
+        <input type="text" onChange={onChangeHandler} placeholder="type your product here" value={value}/>
         <button type="submit">submit</button>
       </form>
     </div>

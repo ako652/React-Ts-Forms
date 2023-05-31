@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
+
 import Form from "./components/searchProducts/Form";
-import ProductList from "./components/searchProducts/ProductList";
 import { product } from "./type/type";
+import SearchProducts from "./components/searchProducts/SearchProducts";
+import ToDoList from "./components/toDoList/ToDoList";
 
 const products: product[] = [
   {
@@ -274,15 +276,22 @@ const products: product[] = [
 ];
 
 function App() {
-  const [value, setValue]=useState('')
-  const [filter , setFilter]=useState(products)
+  const [value, setValue] = useState("");
+  const [filter, setFilter] = useState(products);
   return (
     <div className="App">
       <h1>React homework</h1>
-      <Form setValue={setValue} value={value} products={products} setFilter={setFilter}/>
-      
-     
-      <ProductList  filter={filter}/>
+
+      <ToDoList />
+
+      <Form
+        setValue={setValue}
+        value={value}
+        products={products}
+        setFilter={setFilter}
+      />
+
+      <SearchProducts value={value} />
     </div>
   );
 }
